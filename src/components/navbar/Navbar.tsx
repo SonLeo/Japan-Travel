@@ -13,7 +13,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="sticky top-0 w-full py-4 text-white bg-indigo-950 relative opacity-90 z-50">
+    <div className="sticky h-28 top-0 w-full py-4 text-white bg-indigo-950 relative opacity-90 z-50">
       <div className="max-w-screen-2xl h-full mx-auto px-4 flex items-center justify-between">
         <Logo />
         <ul className="hidden lg:inline-flex items-center uppercase text-sm">
@@ -23,9 +23,9 @@ const Navbar = () => {
           <li className={`px-6 py-3 ${styles["navbar-item"]}`}>Blog</li>
           <li className={`px-6 py-3 ${styles["navbar-item"]}`}>Contact</li>
         </ul>
-        <div className={`hidden lg:inline-flex gap-2 items-center py-2 px-12 rounded border border-solid border-white ${styles["nav-login"]}`}>
+        <button className={`hidden lg:inline-flex gap-2 items-center py-2 px-12 rounded border border-solid border-white ${styles["nav-login"]}`}>
           <UserCircleIcon className="text-white w-6" /> <span className="uppercase">Login</span>
-        </div>
+        </button>
         <div className="inline-flex lg:hidden" onClick={toggleNavbar}>
           {isOpen ? (
             <>
