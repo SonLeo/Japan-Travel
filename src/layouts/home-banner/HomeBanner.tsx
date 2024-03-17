@@ -1,9 +1,9 @@
 "use client"
 import { useEffect } from "react"
-import styles from "./Banner.module.css"
+import styles from "./HomeBanner.module.css"
 import Typed from "typed.js";
 
-export default function Banner() {
+export default function HomeBanner() {
     useEffect(() => {
         const options = {
             strings: ["Unforgettable Adventures in Japan", "Authentic Japanese Experiences", "Experience Japan Like Never Before", "Dreaming of Japan? Let's Make It Real"],

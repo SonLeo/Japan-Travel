@@ -1,13 +1,15 @@
 import Navbar from "~/components/navbar/Navbar";
-import Banner from "~/layouts/banner/Banner";
-import Services from "~/layouts/services/Services";
+import HomeBanner from "~/layouts/home-banner/HomeBanner";
+import HomeServices from "~/layouts/home-services/HomeServices";
+import HomeAbout from "~/layouts/home-about/HomeAbout";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
-      <Banner />
-      <Services />
+      <HomeBanner />
+      <HomeServices />
+      <HomeAbout />
     </main>
   );
 }
