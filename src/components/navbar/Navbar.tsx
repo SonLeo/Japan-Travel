@@ -13,7 +13,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="sticky h-28 top-0 w-full py-4 text-white bg-indigo-950 relative opacity-90 z-50">
+    <div className="sticky h-28 top-0 w-full py-4 text-white bg-indigo-950 opacity-90 z-50">
       <div className="max-w-screen-2xl h-full mx-auto px-4 flex items-center justify-between">
         <Logo />
         <ul className="hidden lg:inline-flex items-center uppercase text-sm">
