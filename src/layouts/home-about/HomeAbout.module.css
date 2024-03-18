@@ -12,6 +12,7 @@
 
     .about-content {
         max-width: 900px;
+        margin-right: 2rem;
     }
 
     .about-img {
@@ -65,12 +66,28 @@
     font-size: 30px;
     color: var(--secondary-color);
     text-transform: capitalize;
+    margin-top: 2rem;
 }
 
 .about-desc {
-
+    margin: 2rem 0;
+    text-align: justify;
+    font-size: 20px;
 }
 
 .about-action {
+    display: flex;
+    justify-content: center;
+}
 
+.action-btn {
+    padding: 8px 20px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-transform: capitalize;
+    border-radius: 4px;
+}
+
+.action-btn:hover {
+    background-color: var(--primary-color);
 }
