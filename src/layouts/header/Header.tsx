@@ -2,11 +2,20 @@
 import { Bars3Icon } from "@heroicons/react/16/solid";
 import { UserCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import styles from "./Header.module.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../components/Logo";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [menuHeight, setMenuHeight] = useState(0);
+
+  useEffect(() => {
+    if (isOpen) {
+      setMenuHeight(document.getElementById("mobile-menu").scrollHeight);
+    } else {
+      setMenuHeight(0);
+    }
+  }, [isOpen]);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -17,11 +26,11 @@ const Header = () => {
       <div className="max-w-screen-2xl h-full mx-auto px-4 flex items-center justify-between">
         <Logo />
         <ul className="hidden lg:inline-flex items-center uppercase text-sm">
-          <li className={`px-6 py-3 ${styles["navbar-item"]} ${styles["active"]}`}>Home</li>
-          <li className={`px-6 py-3 ${styles["navbar-item"]}`}>About</li>
-          <li className={`px-6 py-3 ${styles["navbar-item"]}`}>Services</li>
-          <li className={`px-6 py-3 ${styles["navbar-item"]}`}>Blog</li>
-          <li className={`px-6 py-3 ${styles["navbar-item"]}`}>Contact</li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]} ${styles["active"]}`}>Home</li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>About</li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>Services</li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>Blog</li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>Contact</li>
         </ul>
         <button className={`hidden lg:inline-flex gap-2 items-center py-2 px-12 rounded border border-solid border-white ${styles["nav-login"]}`}>
           <UserCircleIcon className="text-white w-6" /> <span className="uppercase">Login</span>
@@ -32,7 +41,7 @@ const Header = () => {
               <div>
                 <XCircleIcon className="text-white w-8" />
               </div>
-              <ul className={`${styles["nav-mobile"]} absolute top-full inset-x-0 bg-indigo-950 border-t border-solid border-gray-300 w-full z-40`}>
+              <ul id="mobile-menu" className="absolute top-full inset-x-0 bg-indigo-950 border-t border-solid border-gray-300 w-full z-40 overflow-hidden transition-max-height duration-300 ease-in-out" style={{ maxHeight: menuHeight }}>
                 <li className={`${styles["nav-mobile-item"]} ${styles["active"]} px-4 py-2 w-full uppercase text-white`}>Home</li>
                 <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>About</li>
                 <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>Services</li>
@@ -41,7 +50,18 @@ const Header = () => {
               </ul>
             </>
           ) : (
-            <Bars3Icon className="text-white w-8" />
+            <>
+              <div>
+                <Bars3Icon className="text-white w-8" />
+              </div>
+              <ul id="mobile-menu" className="absolute top-full inset-x-0 bg-indigo-950 border-t border-solid border-gray-300 w-full z-40 overflow-hidden transition-max-height duration-300 ease-in-out" style={{ maxHeight: menuHeight }}>
+                <li className={`${styles["nav-mobile-item"]} ${styles["active"]} px-4 py-2 w-full uppercase text-white`}>Home</li>
+                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>About</li>
+                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>Services</li>
+                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>Blog</li>
+                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>Contact</li>
+              </ul>
+            </>
           )}
         </div>
       </div>

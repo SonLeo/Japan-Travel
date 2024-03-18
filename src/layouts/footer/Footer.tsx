@@ -10,8 +10,8 @@ export default function Footer() {
   return (
     <section className="w-full py-4 text-white bg-indigo-950">
       <footer className="max-w-screen-2xl h-full mx-auto px-4">
-        <div className="grid grid-cols-2 sm:grid-cols-9 gap-8">
-          <div className="col-span-1 sm:col-span-3 mt-8 mb-0 sm:mb-8">
+        <div className="grid grid-cols-5 text-xs lg:text-base lg:grid-cols-9 gap-8">
+          <div className="col-span-3 lg:col-span-3 mt-8 mb-0 lg:mb-8">
             <div className="mb-5">
               <Logo />
             </div>
@@ -29,7 +29,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="col-span-1 sm:col-span-2 mt-8 mb-0 sm:mb-8">
+          <div className="col-span-2 lg:col-span-2 mt-8 mb-0 lg:mb-8">
             <h3 className="mb-5 text-xl">About Us</h3>
             <p className="py-1 flex items-center text-gray-400 hover:cursor-pointer hover:text-white">Our Story</p>
             <p className="py-1 flex items-center text-gray-400 hover:cursor-pointer hover:text-white">Team</p>
@@ -38,7 +38,7 @@ export default function Footer() {
             <p className="py-1 flex items-center text-gray-400 hover:cursor-pointer hover:text-white">Social Media</p>
           </div>
 
-          <div className="col-span-1 row-span-2 sm:col-span-2 sm:row-span-1 mb-8 mt-0 sm:mt-8">
+          <div className="col-span-3 row-span-2 lg:col-span-2 lg:row-span-1 mb-8 mt-0 lg:mt-8">
             <h3 className="mb-5 text-xl">Services</h3>
             <p className="py-1 flex items-center text-gray-400 hover:cursor-pointer hover:text-white">Web Design</p>
             <p className="py-1 flex items-center text-gray-400 hover:cursor-pointer hover:text-white">Social Media</p>
@@ -47,7 +47,7 @@ export default function Footer() {
             <p className="py-1 flex items-center text-gray-400 hover:cursor-pointer hover:text-white">Testimonials</p>
           </div>
 
-          <div className="col-span-1 row-span-2 sm:col-span-2 sm:row-span-1 mb-8 mt-0 sm:mt-8">
+          <div className="col-span-2 row-span-2 lg:col-span-2 lg:row-span-1 mb-8 mt-0 lg:mt-8">
             <h3 className="mb-5 text-xl">Portfolio</h3>
             <p className="py-1 flex items-center text-gray-400 hover:cursor-pointer hover:text-white">Case Studies</p>
             <p className="py-1 flex items-center text-gray-400 hover:cursor-pointer hover:text-white">Projects</p>
