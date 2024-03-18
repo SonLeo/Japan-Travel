@@ -1,11 +1,11 @@
 "use client"
 import { Bars3Icon } from "@heroicons/react/16/solid";
 import { UserCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
-import styles from "./Navbar.module.css"
+import styles from "./Header.module.css";
 import React, { useState } from "react";
-import Logo from "../Logo";
+import Logo from "../../components/Logo";
 
-const Navbar = () => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
@@ -49,4 +49,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
