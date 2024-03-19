@@ -3,7 +3,7 @@ import { Bars3Icon } from "@heroicons/react/16/solid";
 import { UserCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import styles from "./Header.module.css";
 import React, { useEffect, useState } from "react";
-import Logo from "../../components/Logo";
+import Logo from "../Logo";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,11 +42,11 @@ const Header = () => {
                 <XCircleIcon className="text-white w-8" />
               </div>
               <ul id="mobile-menu" className="absolute top-full inset-x-0 bg-indigo-950 border-t border-solid border-gray-300 w-full z-40 overflow-hidden transition-max-height duration-300 ease-in-out" style={{ maxHeight: menuHeight }}>
-                <li className={`${styles["nav-mobile-item"]} ${styles["active"]} px-4 py-2 w-full uppercase text-white`}>Home</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>About</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>Services</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>Blog</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>Contact</li>
+                <li className={`${styles["nav-mobile-item"]} ${styles["active"]} px-4 py-2 w-full text-xs uppercase text-white`}>Home</li>
+                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>About</li>
+                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>Services</li>
+                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>Blog</li>
+                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>Contact</li>
               </ul>
             </>
           ) : (
@@ -54,12 +54,12 @@ const Header = () => {
               <div>
                 <Bars3Icon className="text-white w-8" />
               </div>
-              <ul id="mobile-menu" className="absolute top-full inset-x-0 bg-indigo-950 border-t border-solid border-gray-300 w-full z-40 overflow-hidden transition-max-height duration-300 ease-in-out" style={{ maxHeight: menuHeight }}>
-                <li className={`${styles["nav-mobile-item"]} ${styles["active"]} px-4 py-2 w-full uppercase text-white`}>Home</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>About</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>Services</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>Blog</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full uppercase text-white`}>Contact</li>
+              <ul id="mobile-menu" className="absolute top-full inset-x-0 bg-indigo-950 w-full z-40 overflow-hidden transition-max-height duration-300 ease-in-out" style={{ maxHeight: menuHeight }}>
+                <li className={`${styles["nav-mobile-item"]} ${styles["active"]} px-4 py-2 w-full text-xs uppercase text-white`}>Home</li>
+                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>About</li>
+                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>Services</li>
+                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>Blog</li>
+                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>Contact</li>
               </ul>
             </>
           )}

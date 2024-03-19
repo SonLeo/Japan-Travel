@@ -1,4 +1,4 @@
-import Logo from "~/components/Logo";
+import Logo from "~/app/(client)/components/Logo";
 import styles from "./Footer.module.css";
 import {
   EnvelopeIcon,
