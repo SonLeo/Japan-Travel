@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./HomeAbout.module.css";
 
 export default function HomeAbout() {
@@ -21,7 +22,7 @@ export default function HomeAbout() {
           </div>
         </div>
         <div className={styles["about-img"]}>
-          <img src="https://i.imgur.com/2oaIp5J.png" alt="About img" />
+          <Image height={500} width={400} src="https://i.imgur.com/2oaIp5J.png" alt="About img" />
         </div>
       </div>
     </section>
