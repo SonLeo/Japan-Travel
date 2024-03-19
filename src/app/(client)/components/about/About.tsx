@@ -1,5 +1,4 @@
-import { faFlag, faListAlt, faRocket } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./About.module.css"
 import Banner from "../Banner";
 
 export default function About() {
@@ -7,25 +6,25 @@ export default function About() {
     <>
       <Banner content = {"About us"} />
 
-      <section>
-        <div>
+      <section className={styles["established"]}>
+        <div className={styles["established-heading"]}>
           <h3>Established in 2003</h3>
         </div>
 
-        <div>
-          <h4>
+        <div className={styles["established-desc"]}>
+          <h4 className={styles["established-sub-heading"]}>
             Two differed husbands met screened his. Bed was form wife out ask
             draw. Wholly coming at we no enable. Offending sir delivered
             questions.
           </h4>
-          <p>
+          <p className={styles["established-content"]}>
             Boy favourable day can introduced sentiments entreaties. Noisier
             carried of in warrant because. So mr plate seems cause chief widen
             first. Two differed husbands met screened his. Bed was form wife out
             ask draw. Wholly coming at we no enable. Offending sir delivered
             questions now new met. Acceptance she interested.
           </p>
-          <h4>Renee Howard</h4>
+          <h4 className={styles["established-sub-heading"]}>Renee Howard</h4>
         </div>
       </section>
 

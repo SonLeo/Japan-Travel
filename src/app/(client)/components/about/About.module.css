@@ -1,0 +1,23 @@
+.established {
+    display: flex;
+    margin: 40px 0;
+}
+
+.established-heading {
+    flex: 1;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.established-desc {
+    flex: 1;
+}
+
+.established-sub-heading {
+    font-weight: 500;
+}
+
+.established-content {
+    margin: 20px 0;
+}

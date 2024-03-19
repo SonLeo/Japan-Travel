@@ -4,6 +4,7 @@ import { UserCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import styles from "./Header.module.css";
 import React, { useEffect, useState } from "react";
 import Logo from "../Logo";
+import Link from "next/link";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,11 +27,21 @@ const Header = () => {
       <div className="max-w-screen-2xl h-full mx-auto px-4 flex items-center justify-between">
         <Logo />
         <ul className="hidden lg:inline-flex items-center uppercase text-sm">
-          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]} ${styles["active"]}`}>Home</li>
-          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>About</li>
-          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>Services</li>
-          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>Blog</li>
-          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>Contact</li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]} ${styles["active"]}`}>
+            <Link href="/">Home</Link>
+          </li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>
+            <Link href="/about">About</Link>
+          </li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>
+            <Link href="/services">Services</Link>
+          </li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>
+            <Link href="/blog">Blog</Link>
+          </li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>
+            <Link href="/contact">Contact</Link>
+          </li>
         </ul>
         <button className={`hidden lg:inline-flex gap-2 items-center py-2 px-12 rounded border border-solid border-white ${styles["nav-login"]}`}>
           <UserCircleIcon className="text-white w-6" /> <span className="uppercase">Login</span>
