@@ -12,7 +12,10 @@ const Header = () => {
 
   useEffect(() => {
     if (isOpen) {
-      setMenuHeight(document.getElementById("mobile-menu").scrollHeight);
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (mobileMenu) {
+        setMenuHeight(mobileMenu.scrollHeight);
+      }
     } else {
       setMenuHeight(0);
     }
