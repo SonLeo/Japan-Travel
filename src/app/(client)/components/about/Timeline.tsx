@@ -1,146 +1,133 @@
+"use client";
+import {
+  FlagIcon,
+  ListBulletIcon,
+  RocketLaunchIcon,
+} from "@heroicons/react/24/outline";
+import { useEffect, useRef } from "react";
+
 export default function Timeline() {
+  const timelineBarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const timelineBar = timelineBarRef.current;
+      if (timelineBar) {
+        const scrollPosition = window.scrollY || window.pageYOffset;
+        const timelineBarPosition = timelineBar.offsetTop;
+        const windowHeight = window.innerHeight;
+        const distanceToTimelineBar = scrollPosition - timelineBarPosition;
+
+        console.log(scrollPosition)
+        if (distanceToTimelineBar < windowHeight) {
+          const newHeight = Math.max(0, windowHeight - distanceToTimelineBar);
+          console.log(distanceToTimelineBar);
+          console.log(newHeight);
+          timelineBar.style.height = `${newHeight}px`;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section className="max-w-screen-2xl h-full mx-auto px-4">
       <div className="my-12">
-        <h2 className="text-3xl font-bold text-center mb-10" style={{ color: 'var(--secondary-color)' }}>Company Timeline</h2>
-        
+        <h2 className="text-3xl font-bold text-center mb-10 text-var[(--secondary-color)]">
+          Company Timeline
+        </h2>
+
         <div className="w-full max-w-3xl mx-auto">
-          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-[var(--secondary-color)]">
+            <div
+              ref={timelineBarRef}
+              id="timeline-bar"
+              className="h-0 max-h-full space-y-8 absolute inset-0 ml-5 -translate-x-px md:mx-auto md:translate-x-0 w-0.5 bg-[var(--primary-color)]"
+            ></div>
+
+            <div></div>
+            <div className="md:mx-auto max-w-20 text-center z-10 bg-white border-2 border-[var(--secondary-color)] relative py-1 font-bold rounded">
+              2021
+            </div>
             <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="12"
-                  height="10"
-                >
-                  <path
-                    fill-rule="nonzero"
-                    d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z"
-                  />
-                </svg>
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-[var(--secondary-color)] text-white group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                <RocketLaunchIcon className="w-6" />
               </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow">
-                <div className="flex items-center justify-between space-x-2 mb-1">
-                  <div className="font-bold text-slate-900">Order Placed</div>
-                  <time className="font-caveat font-medium text-indigo-500">
-                    08/06/2023
-                  </time>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white">
+                <div className="md:absolute w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] right-0 md:top-1/2 md:-translate-y-1/2 mb-5 md:mb-0">
+                  <h4 className="font-bold text-[var(--secondary-color)]">
+                    Jan 2021
+                  </h4>
+                  <p className="text-sm text-[#666666]">Company Established</p>
                 </div>
-                <div className="text-slate-500">
-                  Pretium lectus quam id leo. Urna et pharetra aliquam
-                  vestibulum morbi blandit cursus risus.
+                <div className="p-4 rounded border border-[var(--secondary-color)] shadow">
+                  <h3 className="font-bold text-[var(--secondary-color)] space-x-2 mb-1 md:text-right">
+                    Agency Inception
+                  </h3>
+                  <p className="text-[var(--secondary-color)] text-justify text-sm">
+                    Fat weddings servants. Smile spoke total few great had never
+                    their too. Amongst moments do in arrived at my replied. Fat
+                    beautiful world among us weddings servants.
+                  </p>
                 </div>
               </div>
             </div>
-
+            <div></div>
+            <div className="md:mx-auto max-w-20 text-center z-10 bg-white border-2 border-[var(--secondary-color)] relative py-1 font-bold rounded">
+              2022
+            </div>
             <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="12"
-                  height="10"
-                >
-                  <path
-                    fill-rule="nonzero"
-                    d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z"
-                  />
-                </svg>
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-[var(--secondary-color)] text-white group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                <ListBulletIcon className="w-6" />
               </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow">
-                <div className="flex items-center justify-between space-x-2 mb-1">
-                  <div className="font-bold text-slate-900">Order Shipped</div>
-                  <time className="font-caveat font-medium text-indigo-500">
-                    09/06/2023
-                  </time>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white">
+                <div className="md:absolute w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] left-0 md:text-right md:top-1/2 md:-translate-y-1/2 mb-5 md:mb-0">
+                  <h4 className="font-bold text-[var(--secondary-color)]">
+                    Jan 2022
+                  </h4>
+                  <p className="text-sm text-[#666666]">Community Engagement</p>
                 </div>
-                <div className="text-slate-500">
-                  Pretium lectus quam id leo. Urna et pharetra aliquam
-                  vestibulum morbi blandit cursus risus.
+                <div className="p-4 rounded border border-[var(--secondary-color)] shadow">
+                  <h3 className="font-bold text-[var(--secondary-color)] space-x-2 mb-1 md:text-left">
+                    Community Engagement
+                  </h3>
+                  <p className="text-[var(--secondary-color)] text-justify text-sm">
+                    Fat weddings servants. Smile spoke total few great had never
+                    their too. Amongst moments do in arrived at my replied. Fat
+                    beautiful world among us weddings servants.
+                  </p>
                 </div>
               </div>
             </div>
-
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="12"
-                  height="10"
-                >
-                  <path
-                    fill-rule="nonzero"
-                    d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z"
-                  />
-                </svg>
-              </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow">
-                <div className="flex items-center justify-between space-x-2 mb-1">
-                  <div className="font-bold text-slate-900">In Transit</div>
-                  <time className="font-caveat font-medium text-indigo-500">
-                    10/06/2023
-                  </time>
-                </div>
-                <div className="text-slate-500">
-                  Pretium lectus quam id leo. Urna et pharetra aliquam
-                  vestibulum morbi blandit cursus risus.
-                </div>
-              </div>
+            <div className="md:mx-auto max-w-20 text-center z-10 bg-white border-2 border-[var(--secondary-color)] relative py-1 font-bold rounded">
+              2023
             </div>
-
+            <div></div>
             <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="12"
-                  height="10"
-                >
-                  <path
-                    fill-rule="nonzero"
-                    d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z"
-                  />
-                </svg>
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-[var(--secondary-color)] text-white group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                <FlagIcon className="w-6" />
               </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow">
-                <div className="flex items-center justify-between space-x-2 mb-1">
-                  <div className="font-bold text-slate-900">
-                    Out of Delivery
-                  </div>
-                  <time className="font-caveat font-medium text-indigo-500">
-                    12/06/2023
-                  </time>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white">
+                <div className="md:absolute w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] right-0 text-left md:top-1/2 md:-translate-y-1/2 mb-5 md:mb-0">
+                  <h4 className="font-bold text-[var(--secondary-color)]">
+                    Jan 2023
+                  </h4>
+                  <p className="text-sm text-[#666666]">Agency Achievements</p>
                 </div>
-                <div className="text-slate-500">
-                  Pretium lectus quam id leo. Urna et pharetra aliquam
-                  vestibulum morbi blandit cursus risus.
-                </div>
-              </div>
-            </div>
-
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="12"
-                  height="12"
-                >
-                  <path d="M12 10v2H7V8.496a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5V12H0V4.496a.5.5 0 0 1 .206-.4l5.5-4a.5.5 0 0 1 .588 0l5.5 4a.5.5 0 0 1 .206.4V10Z" />
-                </svg>
-              </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow">
-                <div className="flex items-center justify-between space-x-2 mb-1">
-                  <div className="font-bold text-slate-900">Delivered</div>
-                  <time className="font-caveat font-medium text-amber-500">
-                    Exp. 12/08/2023
-                  </time>
-                </div>
-                <div className="text-slate-500">
-                  Pretium lectus quam id leo. Urna et pharetra aliquam
-                  vestibulum morbi blandit cursus risus.
+                <div className="p-4 rounded border border-[var(--secondary-color)] shadow">
+                  <h3 className="font-bold text-[var(--secondary-color)] space-x-2 mb-1 md:text-left">
+                    Agency Achievements
+                  </h3>
+                  <p className="text-[var(--secondary-color)] text-justify text-sm">
+                    Fat weddings servants. Smile spoke total few great had never
+                    their too. Amongst moments do in arrived at my replied. Fat
+                    beautiful world among us weddings servants.
+                  </p>
                 </div>
               </div>
             </div>

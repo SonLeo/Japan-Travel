@@ -1,0 +1,39 @@
+.blog-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(    --primary-color);
+    border:  1px solid var( --primary-color);
+    overflow: hidden;
+    cursor: pointer;
+
+    color: white;
+    z-index: 1000;
+  }
+  
+  .blog-button:after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: var( --secondary-color) ;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    left: 0;
+  }
+  .blog-button:hover::after {
+    left: auto;
+    right: 0;
+    width: 0%;
+  }
+  .blog-button span {
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    color: white;
+    padding: 0 15px;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+  }
+
