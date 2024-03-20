@@ -7,16 +7,17 @@ import styles from "./services.module.css";
 import { IoCaretDownOutline } from "react-icons/io5";
 import { IoCaretUp } from "react-icons/io5";
 
-const Services = () => {
-  const [icon, setIcon] = useState(false);
-  const HandleClick = () => {
-    setIcon(!icon);
-  };
-  const [isContentVisible, setIsContentVisible] = useState(false);
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+} from "@chakra-ui/react";
 
-  const handleToggleContent = () => {
-    setIsContentVisible(!isContentVisible);
-  };
+const Services = () => {
+
 
   return (
     <div>
@@ -134,7 +135,7 @@ const Services = () => {
         </div>{" "}
       </div>
 
-      <div className="banner-question bg-[url('https://i.imgur.com/DUdSjvb.jpg')]">
+      <div className="banner-question bg-[url('https://i.imgur.com/DUdSjvb.jpg')] bg-cover bg-center">
         <div className=" py-[100px] px-[10px] max-w-[658px] mx-auto ">
           <div className=" text-center">
             <h1 className="text-[50px] font-bold text-white">F.A.Q.</h1>
@@ -144,37 +145,97 @@ const Services = () => {
               increasing pianoforte.
             </span>
           </div>
+          
           <div>
-            <button
-              className="p-[18px] bg-white flex items-center rounded-xl w-full justify-between"
-              onClick={handleToggleContent}
-            >
-              <span className="text-base block">
-                What is paid search management, and why do I need it?
-              </span>
-              <div className="relative">
-                {isContentVisible ? (
-                  <span className="absolute -top-2 right-0">
-                    <IoCaretUp />
-                  </span>
-                ) : (
-                  <span className="absolute -top-2 right-0">
-                    <IoCaretDownOutline />
-                  </span>
-                )}
-              </div>
-            </button>
-            <div
-              className={`p-[25px] text-[15px] bg-[#DFD6CE] mt-2 rounded-xl ${
-                isContentVisible ? "visible" : "invisible"
-              }`}
-            >
-              In to am attended desirous raptures declared diverted confined at.
-              Collected instantly remaining up certainly to necessary as. Over
-              walk dull into son boy door went new. At or happiness commanded
-              daughters as. Is handsome an declared at received in extended
-              vicinity subjects. Into miss on he over been late pain an.
-            </div>
+            <Accordion allowMultiple={false} className=" mt-5">
+              <AccordionItem className=" border-none">
+                <h2 className=" bg-white rounded-xl ">
+                  <AccordionButton >
+                    <Box as="span" flex="1" textAlign="left">
+                      What is paid search management, and why do I need it?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel
+                  pb={4}
+                  className="bg-[#DFD6CE] p-[25px] text-[15px] mt-[5px] rounded-xl "
+                >
+                  In to am attended desirous raptures declared diverted confined
+                  at. Collected instantly remaining up certainly to necessary
+                  as. Over walk dull into son boy door went new. At or happiness
+                  commanded daughters as. Is handsome an declared at received in
+                  extended vicinity subjects. Into miss on he over been late
+                  pain an.
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem className=" border-none mt-2">
+                <h2 className=" bg-white rounded-xl ">
+                  <AccordionButton className=" py-3">
+                    <Box as="span" flex="1" textAlign="left">
+                      How can paid search management benefit my business?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel
+                  pb={4}
+                  className="bg-[#DFD6CE] p-[25px] text-[15px] mt-[5px] rounded-xl"
+                >
+                  In to am attended desirous raptures declared diverted confined
+                  at. Collected instantly remaining up certainly to necessary
+                  as. Over walk dull into son boy door went new. At or happiness
+                  commanded daughters as. Is handsome an declared at received in
+                  extended vicinity subjects. Into miss on he over been late
+                  pain an.
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem className=" border-none mt-2">
+                <h2 className=" bg-white rounded-xl ">
+                  <AccordionButton className=" py-3">
+                    <Box as="span" flex="1" textAlign="left">
+                      What platforms do you support for paid search management?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel
+                  pb={4}
+                  className="bg-[#DFD6CE] p-[25px] text-[15px] mt-[5px] rounded-xl"
+                >
+                  In to am attended desirous raptures declared diverted confined
+                  at. Collected instantly remaining up certainly to necessary
+                  as. Over walk dull into son boy door went new. At or happiness
+                  commanded daughters as. Is handsome an declared at received in
+                  extended vicinity subjects. Into miss on he over been late
+                  pain an.
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem className=" border-none mt-2">
+                <h2 className=" bg-white rounded-xl ">
+                  <AccordionButton className=" py-3">
+                    <Box as="span" flex="1" textAlign="left">
+                      How do you optimize my paid search campaigns?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel
+                  pb={4}
+                  className="bg-[#DFD6CE] p-[25px] text-[15px] mt-[5px] rounded-xl"
+                >
+                  In to am attended desirous raptures declared diverted confined
+                  at. Collected instantly remaining up certainly to necessary
+                  as. Over walk dull into son boy door went new. At or happiness
+                  commanded daughters as. Is handsome an declared at received in
+                  extended vicinity subjects. Into miss on he over been late
+                  pain an.
+                </AccordionPanel>
+              </AccordionItem>
+              
+            </Accordion>
+           
+           
           </div>
         </div>
       </div>
