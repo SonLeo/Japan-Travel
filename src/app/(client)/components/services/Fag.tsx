@@ -16,7 +16,7 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer, index, isOpen, hand
         <p>{question}</p>
         <p>{isOpen ? <FaCaretUp /> : <FaCaretDown />}</p>
       </div>
-      <ul className={isOpen ? "" : "hidden"}>
+      <ul className={`will-change-max-height transition-max-height overflow-hidden duration-1000 ease-in ${isOpen ? "max-h-[1000px]" : "max-h-0"}`}>
         <li className="py-3 px-4 text-justify bg-white rounded-xl items-center mb-2 opacity-70">{answer}</li>
       </ul>
     </li>
@@ -56,12 +56,12 @@ export default function ServicesFaq() {
       <div className="banner-question bg-[url('https://i.imgur.com/DUdSjvb.jpg')] bg-cover bg-center">
         <div className="py-24 px-3 max-w-[658px] mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-white">F.A.Q.</h1>
-            <span className="text-white">
+            <h2 className="text-5xl font-bold text-white">F.A.Q.</h2>
+            <p className="text-white my-8">
               Rendered her for put improved concerns his. Ladies bed wisdom
               theirs mrs men months set. Everything so dispatched as it
               increasing pianoforte.
-            </span>
+            </p>
           </div>
 
           <div>

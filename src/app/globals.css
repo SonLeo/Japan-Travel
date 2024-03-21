@@ -118,3 +118,7 @@
   z-index: 20;
   transition: all 0.3s ease-in-out;
 }
+
+.will-change-max-height {
+  will-change: max-height;
+}
