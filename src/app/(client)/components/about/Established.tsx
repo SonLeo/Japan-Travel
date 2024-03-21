@@ -1,12 +1,12 @@
 export default function Established() {
   return (
     <section className="max-w-screen-2xl h-full mx-auto px-4">
-      <div className="flex my-12">
-        <div className="flex-1 text-center text-2xl font-semibold">
-          <h3 style={{ color: 'var(--secondary-color)' }}>Established in 2003</h3>
+      <div className="md:flex my-12">
+        <div className="flex-1 text-center text-2xl font-semibold mb-5 md:mb-0">
+          <h3 className="text-[var(--secondary-color)]">Established in 2003</h3>
         </div>
         <div className="flex-1">
-          <h4 className="font-medium text-lg" style={{ color: 'var(--secondary-color)' }}>
+          <h4 className="font-medium text-lg text-[var(--secondary-color)]">
             Two differed husbands met screened his. Bed was form wife out ask
             draw. Wholly coming at we no enable. Offending sir delivered
             questions.
@@ -18,7 +18,7 @@ export default function Established() {
             ask draw. Wholly coming at we no enable. Offending sir delivered
             questions now new met. Acceptance she interested.
           </p>
-          <h4 className="font-medium text-lg" style={{ color: 'var(--secondary-color)' }}>Renee Howard</h4>
+          <h4 className="font-medium text-lg text-[var(--secondary-color)]">Renee Howard</h4>
         </div>
       </div>
 

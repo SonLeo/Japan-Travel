@@ -14,23 +14,23 @@ export default function Mission() {
         <Image width={2000} height={2000} src={"https://i.imgur.com/HemgM5R.jpg"} alt="Mission image" className="rounded-2xl my-6" />
       </div>
 
-      <div className="flex justify-around">
-        <div className="mx-5">
-          <h3 className="text-lg font-bold section-sub-heading" style={{ color: 'var(--secondary-color)' }}>Mission</h3>
+      <div className="md:flex justify-around">
+        <div className="mx-5 mb-5 md:mb:0">
+          <h3 className="text-lg font-bold section-sub-heading text-[var(--secondary-color)]">Mission</h3>
+          <p className="text-justify text-gray-600 text-sm">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          </p>
+        </div>
+        <div className="mx-5 mb-5 md:mb:0">
+          <h3 className="text-lg font-bold section-sub-heading text-[var(--secondary-color)]">Vision</h3>
           <p className="text-justify text-gray-600 text-sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
           </p>
         </div>
         <div className="mx-5">
-          <h3 className="text-lg font-bold section-sub-heading" style={{ color: 'var(--secondary-color)' }}>Vision</h3>
-          <p className="text-justify text-gray-600 text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-          </p>
-        </div>
-        <div className="mx-5">
-          <h3 className="text-lg font-bold section-sub-heading" style={{ color: 'var(--secondary-color)' }}>Values</h3>
+          <h3 className="text-lg font-bold section-sub-heading text-[var(--secondary-color)]">Values</h3>
           <p className="text-justify text-gray-600 text-sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
