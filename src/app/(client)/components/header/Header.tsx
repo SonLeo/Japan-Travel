@@ -1,13 +1,20 @@
-"use client"
+"use client";
 import { Bars3Icon } from "@heroicons/react/16/solid";
 import { UserCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import styles from "./Header.module.css";
 import React, { useEffect, useState } from "react";
 import Logo from "../Logo";
+import { useSelector } from "react-redux";
+import { RootState } from "~/app/lib/store";
+import authSlice from "~/app/lib/features/authSlice";
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [menuHeight, setMenuHeight] = useState(0);
+  const user = useSelector(
+    (state: RootState) => authSlice.selectSlice(state).login.currentUser
+  );
 
   useEffect(() => {
     if (isOpen) {
@@ -19,21 +26,36 @@ const Header = () => {
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
-  }
+  };
 
   return (
     <div className="sticky h-28 top-0 w-full py-4 text-white bg-indigo-950 opacity-90 z-50">
       <div className="max-w-screen-2xl h-full mx-auto px-4 flex items-center justify-between">
         <Logo />
         <ul className="hidden lg:inline-flex items-center uppercase text-sm">
-          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]} ${styles["active"]}`}>Home</li>
-          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>About</li>
-          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>Services</li>
-          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>Blog</li>
-          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>Contact</li>
+          <li
+            className={`px-6 py-3 opacity-60 ${styles["navbar-item"]} ${styles["active"]}`}
+          >
+            Home
+          </li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>
+            About
+          </li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>
+            Services
+          </li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>
+            Blog
+          </li>
+          <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]}`}>
+            Contact
+          </li>
         </ul>
-        <button className={`hidden lg:inline-flex gap-2 items-center py-2 px-12 rounded border border-solid border-white ${styles["nav-login"]}`}>
-          <UserCircleIcon className="text-white w-6" /> <span className="uppercase">Login</span>
+        <button
+          className={`hidden lg:inline-flex gap-2 items-center py-2 px-12 rounded border border-solid border-white ${styles["nav-login"]}`}
+        >
+          <UserCircleIcon className="text-white w-6" />{" "}
+          <span className="uppercase">Login</span>
         </button>
         <div className="inline-flex lg:hidden" onClick={toggleNavbar}>
           {isOpen ? (
@@ -41,12 +63,36 @@ const Header = () => {
               <div>
                 <XCircleIcon className="text-white w-8" />
               </div>
-              <ul id="mobile-menu" className="absolute top-full inset-x-0 bg-indigo-950 border-t border-solid border-gray-300 w-full z-40 overflow-hidden transition-max-height duration-300 ease-in-out" style={{ maxHeight: menuHeight }}>
-                <li className={`${styles["nav-mobile-item"]} ${styles["active"]} px-4 py-2 w-full text-xs uppercase text-white`}>Home</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>About</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>Services</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>Blog</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>Contact</li>
+              <ul
+                id="mobile-menu"
+                className="absolute top-full inset-x-0 bg-indigo-950 border-t border-solid border-gray-300 w-full z-40 overflow-hidden transition-max-height duration-300 ease-in-out"
+                style={{ maxHeight: menuHeight }}
+              >
+                <li
+                  className={`${styles["nav-mobile-item"]} ${styles["active"]} px-4 py-2 w-full text-xs uppercase text-white`}
+                >
+                  Home
+                </li>
+                <li
+                  className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}
+                >
+                  About
+                </li>
+                <li
+                  className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}
+                >
+                  Services
+                </li>
+                <li
+                  className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}
+                >
+                  Blog
+                </li>
+                <li
+                  className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}
+                >
+                  Contact
+                </li>
               </ul>
             </>
           ) : (
@@ -54,16 +100,41 @@ const Header = () => {
               <div>
                 <Bars3Icon className="text-white w-8" />
               </div>
-              <ul id="mobile-menu" className="absolute top-full inset-x-0 bg-indigo-950 w-full z-40 overflow-hidden transition-max-height duration-300 ease-in-out" style={{ maxHeight: menuHeight }}>
-                <li className={`${styles["nav-mobile-item"]} ${styles["active"]} px-4 py-2 w-full text-xs uppercase text-white`}>Home</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>About</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>Services</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>Blog</li>
-                <li className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}>Contact</li>
+              <ul
+                id="mobile-menu"
+                className="absolute top-full inset-x-0 bg-indigo-950 w-full z-40 overflow-hidden transition-max-height duration-300 ease-in-out"
+                style={{ maxHeight: menuHeight }}
+              >
+                <li
+                  className={`${styles["nav-mobile-item"]} ${styles["active"]} px-4 py-2 w-full text-xs uppercase text-white`}
+                >
+                  Home
+                </li>
+                <li
+                  className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}
+                >
+                  About
+                </li>
+                <li
+                  className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}
+                >
+                  Services
+                </li>
+                <li
+                  className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}
+                >
+                  Blog
+                </li>
+                <li
+                  className={`${styles["nav-mobile-item"]} px-4 py-2 w-full text-xs uppercase text-white`}
+                >
+                  Contact
+                </li>
               </ul>
             </>
           )}
         </div>
+      
       </div>
     </div>
   );

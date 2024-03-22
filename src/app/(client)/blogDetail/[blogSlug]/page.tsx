@@ -3,8 +3,8 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 import Image from "next/image";
-import DetailForm from "./DetailForm";
-import BlogDetaiElement from "./BlogDetaiElement";
+import DetailForm from "../DetailForm";
+import BlogDetaiElement from "../BlogDetaiElement";
 
 const BlogDetail = () => {
   const content = `Did shy say mention enabled through elderly improve. As at so believe account evening behaved hearted is. House is tiled we aware. It ye greatest removing concerns an overcame appetite. Manner result square father boy behind its his. Their above spoke match ye mr right oh as first. Be my depending to believing perfectly concealed household. Point could to built no hours smile sense.
@@ -29,10 +29,10 @@ Smile spoke total few great had never their too. Amongst moments do in arrived a
           <div className=" p-[10px]">
             <div className=" mb-5">
               <span className=" mb-[15px] text-[15px] text-[#666666] block">
-                {paragraph1}
+           {/* {paragraph1}  */}
               </span>
               <span className=" mb-[15px]  text-[15px] text-[#666666] block">
-                {paragraph2}
+              {paragraph2}
               </span>
             </div>
 
