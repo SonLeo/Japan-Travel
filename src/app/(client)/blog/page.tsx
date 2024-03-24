@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from "react";
-import Banner from "../components/Banner";
 import Image from "next/image";
 import Link from "next/link";
+import Banner from "~/components/client-components/Banner";
 
 const Blog = () => {
   const posts = [

@@ -1,9 +1,9 @@
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
-import Banner from "../components/Banner";
 import { MdEmail } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdOutlineAccessTimeFilled } from "react-icons/md";
+import Banner from "~/components/client-components/Banner";
 const Contact = () => {
   return (
     <div className="">

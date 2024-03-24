@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Rating from "~/app/(client)/components/Rating";
+import Rating from "../../Rating";
 
 interface Testimonial {
     quote: string;

@@ -1,10 +1,9 @@
-import Logo from "~/app/(client)/components/Logo";
-import styles from "./Footer.module.css";
 import {
   EnvelopeIcon,
   MapPinIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
