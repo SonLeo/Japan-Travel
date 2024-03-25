@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Services() {
   return (
-    <section className="max-w-screen-2xl h-full mx-auto px-4">
+    <section className="max-w-[1140px] h-full mx-auto px-4">
       <div className="my-12">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="lg:p-5 px-10 lg:flex lg:justify-end lg:items-center">

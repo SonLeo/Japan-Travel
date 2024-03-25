@@ -1,6 +1,6 @@
 export default function Established() {
   return (
-    <section className="max-w-screen-2xl h-full mx-auto px-4">
+    <section className="max-w-[1140px] h-full mx-auto px-4">
       <div className="md:flex my-12">
         <div className="flex-1 text-center text-2xl font-semibold mb-5 md:mb-0">
           <h3 className="text-[var(--secondary-color)]">Established in 2003</h3>

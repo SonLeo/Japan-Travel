@@ -8,7 +8,7 @@ import Logo from "./Logo";
 export default function Footer() {
   return (
     <section className="w-full py-4 text-white bg-indigo-950">
-      <footer className="max-w-screen-2xl h-full mx-auto px-4">
+      <footer className="max-w-[1140px] h-full mx-auto px-4">
         <div className="grid grid-cols-5 text-xs lg:text-base lg:grid-cols-9 gap-8">
           <div className="col-span-3 lg:col-span-3 mt-8 mb-0 lg:mb-8">
             <div className="mb-5">

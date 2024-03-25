@@ -1,3 +1,4 @@
+"use client"
 import { ChevronDownIcon, Cog6ToothIcon, IdentificationIcon, PowerIcon, UserIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,8 +37,8 @@ export default function DropdownUser () {
         className="flex items-center gap-4"
         href="#"
       >
-        <span className="hidden text-right lg:block">
-          <span className="block text-sm font-medium text-black dark:text-white">
+        <span className="hidden text-right lg:block dark:text-white">
+          <span className="block text-sm font-medium">
             Thomas Anree
           </span>
           <span className="block text-xs">UX Designer</span>

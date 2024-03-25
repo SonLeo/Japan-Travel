@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Mission() {
   return (
-    <section className="max-w-screen-2xl h-full mx-auto px-4 py-5">
+    <section className="max-w-[1140px] h-full mx-auto px-4 py-5">
       <div className="flex items-center justify-center">
         <p className="font-poppins text-lg font-normal italic leading-6 inline-block max-w-[460px] text-center" style={{ color: 'var(--primary-color)' }}>
           At the Heart of Our Approach Lies Collaboration, and Support Enabling

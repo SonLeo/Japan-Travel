@@ -5,8 +5,8 @@ import Sidebar from "~/components/admin-components/sidebar";
 import Loader from "~/components/common/loader/Loader";
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
-  const [loading, setLoading] = useState(true);
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [loading, setLoading] = useState<boolean>(true);
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false)
 
   setTimeout(() => setLoading(false), 1000);
 
@@ -21,7 +21,7 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
                 <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
                   <AdminHeader sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
                   <main>
-                    <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+                    <div className="mx-auto max-w-[1140px] p-4 md:p-6 2xl:p-10">
                       {children}
                     </div>
                   </main>

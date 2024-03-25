@@ -2,7 +2,7 @@ import styles from "./HomeAbout.module.css";
 
 export default function HomeAbout() {
   return (
-    <section className="max-w-screen-2xl px-4 h-full mx-auto">
+    <section className="max-w-[1140px] px-4 h-full mx-auto">
       <div className={styles["about"]}>
         <div className={styles["about-content"]}>
           <h2 className={styles["about-heading"]}>About us</h2>

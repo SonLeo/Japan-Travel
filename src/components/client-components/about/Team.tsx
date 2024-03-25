@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Team() {
   return (
-    <section className="max-w-screen-2xl h-full mx-auto px-4">
+    <section className="max-w-[1140px] h-full mx-auto px-4">
       <h2 className=" text-4xl font-bold text-[var(--secondary-color)] text-center mb-10">
         Professional Team
       </h2>

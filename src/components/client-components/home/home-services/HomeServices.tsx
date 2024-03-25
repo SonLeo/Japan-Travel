@@ -106,7 +106,7 @@ const HomeServices: React.FC = () => {
     }, [maxHeight]);
 
     return (
-        <section className="max-w-screen-2xl px-4 h-full mx-auto">
+        <section className="max-w-[1140px] px-4 h-full mx-auto">
             <div style={{ margin: '3.5rem 0' }}>
                 <div className={styles["services-heading"]}>
                     <h2>Our Services</h2>

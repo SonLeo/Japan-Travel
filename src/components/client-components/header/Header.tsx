@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <div className="sticky h-28 top-0 w-full py-4 text-white bg-indigo-950 opacity-90 z-[10000000]">
-      <div className="max-w-screen-2xl h-full mx-auto px-4 flex items-center justify-between">
+      <div className="max-w-[1140px] h-full mx-auto px-4 flex items-center justify-between">
         <Logo />
         <ul className="hidden lg:inline-flex items-center uppercase text-sm">
           <li className={`px-6 py-3 opacity-60 ${styles["navbar-item"]} ${styles["active"]}`}>

@@ -42,7 +42,7 @@ export default function Timeline() {
   }, [timelineBarHeight, redundantHeight]);
 
   return (
-    <section className="max-w-screen-2xl h-full mx-auto px-4">
+    <section className="max-w-[1140px] h-full mx-auto px-4">
       <div className="my-12">
         <h2 className="text-3xl font-bold text-center mb-10 text-[var(--secondary-color)]">
           Company Timeline

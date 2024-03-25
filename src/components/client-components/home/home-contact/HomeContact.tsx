@@ -3,7 +3,7 @@ import styles from "./HomeContact.module.css";
 export default function HomeContact() {
   return (
     <section className={styles["contact"]}>
-      <div className="max-w-screen-2xl px-4 h-full mx-auto text-white">
+      <div className="max-w-[1140px] px-4 h-full mx-auto text-white">
         <h2 className={styles["contact-heading"]}>Any Question?</h2>
         <p className={styles["contact-desc"]}>
           On it differed repeated wandered required in. Then girl neat why yet
