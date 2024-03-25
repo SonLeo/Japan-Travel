@@ -1,7 +1,6 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "~/components/client-components/Logo";
 import DarkModeSwitcher from "./DarkModeSwitcher";
 import DropdownNotification from "./DropdownNotification";
 import DropdownMessage from "./DropdownMessage";
@@ -71,7 +70,7 @@ export default function AdminHeader(props: {
                                 <MagnifyingGlassIcon className="w-5 h-5" />
                             </button>
 
-                            <input type="text" placeholder="Type to search ..." className="w-full bg-transparent font-medium focus:outline-none xl:w-[31.25rem] text-black hover:border-[var(--primary-color)] border border-solid border-black p-2 pl-11 pr-4 rounded-full focus:border-[var(--primary-color)]" />
+                            <input type="text" placeholder="Type to search ..." className="w-full bg-transparent font-medium focus:outline-none xl:w-[31.25rem] text-black hover:border-[var(--primary-color)] border border-solid border-black p-2 pl-11 pr-4 rounded-full dark:border-[#AEB7C0] focus:border-[var(--primary-color)] dark:focus:border-[var(--primary-color)]" />
                         </div>
                     </form>
                 </div>

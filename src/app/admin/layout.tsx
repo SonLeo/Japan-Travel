@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import AdminHeader from "~/components/admin-components/admin-header";
+import Sidebar from "~/components/admin-components/sidebar";
 import Loader from "~/components/common/loader/Loader";
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
@@ -16,6 +17,7 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
           {loading ? <Loader /> :
             (
               <div className="flex h-screen overflow-hidden">
+                <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
                 <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
                   <AdminHeader sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
                   <main>
