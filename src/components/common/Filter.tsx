@@ -1,26 +1,33 @@
 "use client"
-import React from 'react';
-import { Button, Input, Select, Space } from 'antd';
+import React, { useState } from 'react';
+import { DatePicker, Flex, Input, Space } from 'antd';
+import type { Dayjs } from 'dayjs';
 
-const { Search } = Input;
+const { RangePicker } = DatePicker;
 
-const options = [
-  {
-    value: 'zhejiang',
-    label: 'Zhejiang',
-  },
-  {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-  },
-];
+type RangeValue = [Dayjs | null, Dayjs | null] | null;
 
-const Filter = () => (
-  <Space direction="vertical" size="middle">
-    <Space.Compact>
-      <Search addonBefore="From: " placeholder="input search text" allowClear />
-    </Space.Compact>
-  </Space>
-);
+const Filter = () => {
+  const [value, setValue] = useState<RangeValue>(null);
+
+  return (
+    <>
+      <Space direction="vertical" size="middle">
+        <Space.Compact size="large">
+          <Input addonBefore={<div className='w-10 dark:text-white'>from</div>} placeholder="input value filter" />
+        </Space.Compact>
+        <Space.Compact size="large">
+          <Input addonBefore={<div className='w-10 dark:text-white'>to</div>} placeholder="input value filter" />
+        </Space.Compact>
+      </Space>
+
+      <RangePicker className="h-10" value={value} onChange={setValue} />;
+
+      <Flex vertical gap={12}>
+        <Input className='h-10 w-[288px]' placeholder="Title..." />
+      </Flex>
+    </>
+  )
+};
 
 export default Filter;

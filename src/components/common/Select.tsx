@@ -2,7 +2,7 @@
 import React from 'react';
 import { Select, Space } from 'antd';
 
-interface ActionProps {
+interface SelectorProps {
   defaultValue?: string;
   options: { value: string; label: string; disabled?: boolean }[];
   disabled?: boolean;
@@ -11,7 +11,7 @@ interface ActionProps {
   onChange?: (value: string) => void;
 }
 
-const Actions: React.FC<ActionProps> = ({
+const Selector: React.FC<SelectorProps> = ({
   defaultValue,
   options,
   disabled,
@@ -30,7 +30,7 @@ const Actions: React.FC<ActionProps> = ({
     <Space wrap>
       <Select
         defaultValue={defaultValue}
-        style={{ width: 120 }}
+        style={{ width: 120, height: 40 }}
         onChange={handleChange}
         disabled={disabled}
         loading={loading}
@@ -41,4 +41,4 @@ const Actions: React.FC<ActionProps> = ({
   );
 };
 
-export default Actions;
+export default Selector;

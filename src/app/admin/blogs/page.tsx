@@ -1,6 +1,7 @@
 import Breadcrumb from "~/components/admin-components/Breadcrumb";
-import Actions from "~/components/common/Actions";
+import FilterSection from "~/components/admin-components/blogs/FilterSection";
 import Filter from "~/components/common/Filter";
+import Selector from "~/components/common/Select";
 
 export default function BlogsPage() {
   const BlogOptions = [
@@ -28,8 +29,8 @@ export default function BlogsPage() {
         <Breadcrumb pageName="Posts manager" />
 
         <div className="w-full ">
-          <Actions defaultValue={"Actions"} options={BlogOptions} />
-          <Filter />
+          <FilterSection />
+          <Selector defaultValue={"Actions"} options={BlogOptions} />
         </div>
       </div>
     </section>
