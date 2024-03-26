@@ -4,7 +4,7 @@ import { Chat } from "~/types/chat";
 
 const chatData: Chat[] = [
   {
-    avatar: "/images/user/user-01.png",
+    avatar: "https://i.imgur.com/HJL8vfD.png",
     name: "Devid Heilo",
     text: "How are you?",
     time: 12,
@@ -12,7 +12,7 @@ const chatData: Chat[] = [
     dot: 3,
   },
   {
-    avatar: "/images/user/user-02.png",
+    avatar: "https://i.imgur.com/fqlvqxQ.png",
     name: "Henry Fisher",
     text: "Waiting for you!",
     time: 12,
@@ -20,7 +20,7 @@ const chatData: Chat[] = [
     dot: 1,
   },
   {
-    avatar: "/images/user/user-04.png",
+    avatar: "https://i.imgur.com/vtoImuO.png",
     name: "Jhon Doe",
     text: "What's up?",
     time: 32,
@@ -28,7 +28,7 @@ const chatData: Chat[] = [
     dot: 3,
   },
   {
-    avatar: "/images/user/user-05.png",
+    avatar: "https://i.imgur.com/whZoMkO.png",
     name: "Jane Doe",
     text: "Great",
     time: 32,
@@ -36,7 +36,7 @@ const chatData: Chat[] = [
     dot: 6,
   },
   {
-    avatar: "/images/user/user-01.png",
+    avatar: "https://i.imgur.com/pSlCniT.png",
     name: "Jhon Doe",
     text: "How are you?",
     time: 32,
@@ -44,7 +44,7 @@ const chatData: Chat[] = [
     dot: 3,
   },
   {
-    avatar: "/images/user/user-03.png",
+    avatar: "https://i.imgur.com/TzbqDPK.png",
     name: "Jhon Doe",
     text: "How are you?",
     time: 32,
@@ -55,15 +55,15 @@ const chatData: Chat[] = [
 
 const ChatCard = () => {
   return (
-    <div className="col-span-12 rounded-sm border border-stroke bg-white py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
-      <h4 className="mb-6 px-7.5 text-xl font-semibold text-black dark:text-white">
+    <div className="col-span-12 rounded-sm border border-stroke bg-white pt-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4 dark:text-white">
+      <h4 className="pb-6 px-7.5 text-xl font-semibold text-black dark:text-white border-b border-stroke dark:border-strokedark">
         Chats
       </h4>
 
       <div>
         {chatData.map((chat, key) => (
           <Link
-            href="/"
+            href="/admin"
             className="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
             key={key}
           >
@@ -80,8 +80,8 @@ const ChatCard = () => {
               />
               <span
                 className={`absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white ${
-                  chat.dot === 6 ? "bg-meta-6" : `bg-meta-${chat.dot}`
-                } `}
+                  chat.dot === 3 ? "bg-meta-3" : "bg-meta-4"
+                }`}
               ></span>
             </div>
 
@@ -94,7 +94,7 @@ const ChatCard = () => {
                   <span className="text-sm text-black dark:text-white">
                     {chat.text}
                   </span>
-                  <span className="text-xs"> . {chat.time} min</span>
+                  <span className="text-xs">  {`(${chat.time} min)`}</span>
                 </p>
               </div>
               {chat.textCount !== 0 && (

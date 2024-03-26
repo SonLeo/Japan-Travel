@@ -10,13 +10,14 @@ const Breadcrumb = ({ pageName }: BreadcrumbProps) => {
       </h2>
 
       <nav>
-        <ol className="flex items-center gap-2">
-          <li>
+        <ol className="flex items-center gap-2 dark:text-stroke">
+          <li className="hover:text-primary">
             <Link className="font-medium" href="/">
-              Dashboard /
+              Dashboard
             </Link>
           </li>
-          <li className="font-medium text-primary">{pageName}</li>
+          <li> / </li>
+          <li className="font-medium hover:text-primary">{pageName}</li>
         </ol>
       </nav>
     </div>

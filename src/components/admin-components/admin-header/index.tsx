@@ -47,15 +47,8 @@ export default function AdminHeader(props: {
 
                     <Link className="block flex-shrink-0 lg:hidden" href="/admin">
                         <div className="flex items-center justify-between">
-                            <Image
-                                width={80}
-                                height={80}
-                                className="border border-solid bg-white block w-20 h-20 rounded-full mr-3"
-                                src="https://i.imgur.com/Z7R1oAm.png"
-                                alt="Logo"
-                            />
                             <div>
-                                <h1 className="tracking-wider font-semibold text-2xl">
+                                <h1 className="tracking-wider font-semibold block text-black dark:text-white text-2xl xsm:font-medium xsm:text-xl mr-4 xsm:mr-0">
                                     Admin
                                 </h1>
                             </div>

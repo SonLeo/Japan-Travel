@@ -1,3 +1,4 @@
+"use client";
 import { ApexOptions } from "apexcharts";
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
@@ -150,7 +151,6 @@ const ChartOne: React.FC = () => {
             </span>
             <div className="w-full">
               <p className="font-semibold text-primary">Total Revenue</p>
-              <p className="text-sm font-medium">12.04.2022 - 12.05.2022</p>
             </div>
           </div>
           <div className="flex min-w-47.5">
@@ -159,12 +159,11 @@ const ChartOne: React.FC = () => {
             </span>
             <div className="w-full">
               <p className="font-semibold text-secondary">Total Sales</p>
-              <p className="text-sm font-medium">12.04.2022 - 12.05.2022</p>
             </div>
           </div>
         </div>
         <div className="flex w-full max-w-45 justify-end">
-          <div className="inline-flex items-center rounded-md bg-whiter p-1.5 dark:bg-meta-4">
+          <div className="inline-flex items-center rounded-md p-1.5 bg-whiter dark:bg-meta-4">
             <button className="rounded bg-white px-3 py-1 text-xs font-medium text-black shadow-card hover:bg-white hover:shadow-card dark:bg-boxdark dark:text-white dark:hover:bg-boxdark">
               Day
             </button>
@@ -178,7 +177,10 @@ const ChartOne: React.FC = () => {
         </div>
       </div>
 
-      <div>
+      <div className="">
+        <p className="text-sm font-medium mt-5 -mb-3 dark:text-white">
+          12.04.2022 - 12.05.2022
+        </p>
         <div id="chartOne" className="-ml-5">
           <ReactApexChart
             options={options}

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import AdminHeader from "~/components/admin-components/admin-header";
 import Sidebar from "~/components/admin-components/sidebar";
-import Loader from "~/components/common/loader/Loader";
+import Loader from "~/components/common/Loader";
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState<boolean>(true);

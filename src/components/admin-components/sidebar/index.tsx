@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   ArrowRightStartOnRectangleIcon,
   ChartBarIcon,
@@ -8,6 +8,7 @@ import {
   InboxStackIcon,
   PlusIcon,
   UserIcon,
+  XCircleIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
@@ -46,16 +47,16 @@ const menuItems = [
 export default function Sidebar({ sidebarOpen, setSidebarOpen }: SidebarProps) {
   const pathname = usePathname();
 
-  const strigger = useRef<any>(null);
+  const trigger = useRef<any>(null);
   const sidebar = useRef<any>(null);
 
   useEffect(() => {
     const clickHandler = ({ target }: MouseEvent) => {
-      if (!sidebar.current || !strigger.current) return;
+      if (!sidebar.current || !trigger.current) return;
       if (
         !sidebarOpen ||
         sidebar.current.contains(target) ||
-        strigger.current.contains(target)
+        trigger.current.contains(target)
       )
         return;
       setSidebarOpen(false);
@@ -76,12 +77,12 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }: SidebarProps) {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 flex flex-col h-screen overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 z-9999 ${
+      className={`absolute left-0 top-0 flex flex-col h-screen overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 z-9999 border-r border-solid border-[#AEB7C0] ${
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
       <div className="px-2">
-        <div className="flex items-center justify-around gap-2 p-4 border-b border-solid border-[#AEB7C0]">
+        <div className="relative pl-4 pr-12 p-4 border-b border-solid border-[#AEB7C0]">
           <Link href="/admin">
             <div className="flex items-center justify-between">
               <Image
@@ -98,22 +99,32 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }: SidebarProps) {
               </div>
             </div>
           </Link>
+
+          <button
+            ref={trigger}
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            aria-controls="sidebar"
+            aria-expanded={sidebarOpen}
+            className="block lg:hidden absolute top-2 right-1"
+          >
+            <XCircleIcon className="w-6 h-6 text-[#AEB7C0] hover:text-white" />  
+          </button>
         </div>
       </div>
 
       <div className="flex flex-col overflow-y-auto duration-300 ease-linear text-white">
         <ul className="mt-3 px-4 py-4 lg:px-6">
           {menuItems.map((item, index) => (
-          <Link key={index} href={item.href}>
-            <li
-              className={`flex px-4 py-2 rounded-lg my-1 hover:bg-graydark dark:hover:bg-meta-4 ${
-                pathname === item.href && "bg-graydark dark:bg-meta-4"
-              }`}
-            >
-              <item.icon className="w-6 h-6 mr-4" />
-              {item.label}
-            </li>
-          </Link>
+            <Link key={index} href={item.href}>
+              <li
+                className={`flex px-4 py-2 rounded-lg my-1 hover:bg-graydark dark:hover:bg-meta-4 ${
+                  pathname === item.href && "bg-graydark dark:bg-meta-4"
+                }`}
+              >
+                <item.icon className="w-6 h-6 mr-4" />
+                {item.label}
+              </li>
+            </Link>
           ))}
         </ul>
       </div>

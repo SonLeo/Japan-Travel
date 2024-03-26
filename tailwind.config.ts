@@ -1,3 +1,5 @@
+import defaultTheme from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -12,6 +14,12 @@ module.exports = {
   theme: {
     fontFamily: {
       satoshi: ["Satoshi", "sans-serif"],
+    },
+    screens: {
+      "2xsm": "375px",
+      "xsm": "425px",
+      "3xl": "2000px",
+      ...defaultTheme.screens,
     },
     extend: {
       colors: {

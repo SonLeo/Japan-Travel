@@ -5,7 +5,7 @@ export default function DarkModeSwitcher () {
     const [colorMode, setColorMode] = useColorMode();
 
     return (
-        <li>
+        <li className="flex justify-center">
             <label 
                 className={`relative m-0 block h-[30px] w-14 rounded-full ${colorMode === "dark" ? "bg-[var(--primary-color)]" : "bg-stroke"}`}
             >
