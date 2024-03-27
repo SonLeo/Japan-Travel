@@ -1,6 +1,5 @@
 import Breadcrumb from "~/components/admin-components/Breadcrumb";
 import FilterSection from "~/components/admin-components/blogs/FilterSection";
-import Filter from "~/components/common/Filter";
 import Selector from "~/components/common/Select";
 
 export default function BlogsPage() {
