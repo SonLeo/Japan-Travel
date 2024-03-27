@@ -122,3 +122,45 @@
 .will-change-max-height {
   will-change: max-height;
 }
+
+.border-rounded-left-none {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.blog-status .ant-select {
+  width: 100% !important;
+  height: 32px !important;
+}
+.blog-status .ant-space {
+  display: block !important;
+}
+
+.action-button:after {
+  content: "";
+  display: block;
+  top: calc(100% - 17px);
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  border-width: 20px 16px;
+  cursor: default;
+  z-index: 99999;
+}
+
+.action-button::before {
+  content: "";
+  display: block;
+  top: calc(100% - 19px);
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  border-width: 20px 16px;
+  cursor: default;
+  z-index: 99998;
+}
+
+.filter-column > label {
+  flex: 1;
+  min-width: 140px;
+}
